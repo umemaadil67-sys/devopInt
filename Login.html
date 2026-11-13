@@ -1,0 +1,71 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Login Page</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: lightblue;
+            text-align: center;
+        }
+
+        .login {
+            background: white;
+            padding: 30px;
+            margin: 100px auto;
+            width: 280px;
+            border-radius: 10px;
+        }
+
+        input {
+            padding: 10px;
+            margin: 10px;
+            width: 85%;
+        }
+
+        button {
+            padding: 10px 25px;
+            background: blue;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login">
+    <h2>User Login</h2>
+
+    <form id="loginForm">
+        <input type="text" id="username"
+               placeholder="Enter Username" required>
+
+        <input type="password" id="password"
+               placeholder="Enter Password" required>
+
+        <button type="submit" id="loginBtn">Login</button>
+        <p id="message"></p>
+    </form>
+</div>
+
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let user = document.getElementById("username").value;
+    let pass = document.getElementById("password").value;
+
+    if (user === "admin" && pass === "admin123") {
+        document.getElementById("message").innerText =
+            "Login successful!";
+    } else {
+        document.getElementById("message").innerText =
+            "Invalid username or password";
+    }
+});
+</script>
+
+</body>
+</html>
